@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.9
+  pre_build:
+    commands:
+      - echo configure ecr.
+      - aws ecr get-login-password --region sa-east-1 | docker login --username AWS --password-stdin 1234567890.dkr.ecr.sa-east-1.amazonaws.com
+  build:
+    commands:
+      - echo Build started on `date`
+      - docker build -t ecr-archi .
+      - docker tag ecr-archi:latest 1234567890.dkr.ecr.sa-east-1.amazonaws.com/ecr-archi:latest
+      - docker push 1234567890.dkr.ecr.sa-east-1.amazonaws.com/ecr-archi:latest
+  post_build:
+    commands:
+      - echo Build completed on `date`

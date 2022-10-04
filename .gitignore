@@ -1,0 +1,10 @@
+#terraform
+.terraform*
+
+terraform.tfstate
+terraform.tfstate.backup
+
+
+#files about plan
+plan
+
