@@ -13,7 +13,3 @@
 #### `terraform apply` or `terraform apply "somethingfile.txt"`
 
 ##### Finally, create the contents of the folder in AWS
-
-### OBS:
-##### Some variables can only be declared after creating everything, so on first boot use enter and then declare the requested variables on second boot
-#### RDS user and pwd are saved in /1-vpc/vpc.tf
